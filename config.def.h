@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FantasqueSansM Nerd Font:style=Medium:pixelsize=19:antialias=true:autohint=true";
-static char *font2[] = { "FantasqueSansM Nerd Font:style=Medium:pixelsize=19:antialias=true:autohint=true" };
+static char *font = "JetbrainsMono Nerd Font:style=Medium:pixelsize=18:antialias=true:autohint=true";
+static char *font2[] = { "JetbrainsMono Nerd Font:style=Medium:pixelsize=18:antialias=true:autohint=true" };
 static int borderpx = 8;
 
 /*
