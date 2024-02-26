@@ -5,9 +5,14 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetbrainsMono Nerd Font:style=Medium:pixelsize=18:antialias=true:autohint=true";
-static char *font2[] = { "JetbrainsMono Nerd Font:style=Medium:pixelsize=18:antialias=true:autohint=true" };
-static int borderpx = 8;
+static char *font = "JetbrainsMono Nerd Font:size=16:antialias=true:autohint=true";
+static char *font2[] = { "JetbrainsMono Nerd Font:size=16:antialias=true:autohint=true" };
+static int borderpx = 3;
+
+/* Kerning / character bounding-box multipliers */
+static float cwscale = 1.0;
+static float chscale = 1.0;
+float alpha = 0.95;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -24,9 +29,6 @@ char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 /* identification sequence returned in DA and DECID */
 char *vtiden = "\033[?6c";
 
-/* Kerning / character bounding-box multipliers */
-static float cwscale = 1.0;
-static float chscale = 1.0;
 
 /*
  * word delimiter string
@@ -114,7 +116,6 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* bg opacity */
-float alpha = 0.97;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
@@ -278,17 +279,9 @@ static Shortcut shortcuts[] = {
   { MODKEY,               XK_j,           kscrolldown,    {.i =  1} },
   { MODKEY,               XK_Up,          kscrollup,      {.i =  1} },
   { MODKEY,               XK_Down,        kscrolldown,    {.i =  1} },
-  { MODKEY,               XK_k,           kscrollup,      {.i = -1} },
-  { MODKEY,               XK_j,           kscrolldown,    {.i = -1} },
   { MODKEY,		            XK_s,		        changealpha,	{.f = -0.05} },
   { MODKEY,		            XK_a,		        changealpha,	{.f = +0.05} },
   { MODKEY,		            XK_m,		        changealpha,	{.f = +2.00} },
-  { TERMMOD,              XK_Up,          zoom,           {.f = +1} },
-  { TERMMOD,              XK_Down,        zoom,           {.f = -1} },
-  { TERMMOD,              XK_K,           zoom,           {.f = +1} },
-  { TERMMOD,              XK_J,           zoom,           {.f = -1} },
-  { TERMMOD,              XK_U,           zoom,           {.f = +2} },
-  { TERMMOD,              XK_D,           zoom,           {.f = -2} },
   { MODKEY,               XK_l,           externalpipe,   {.v = openurlcmd } },
   { MODKEY,               XK_y,           externalpipe,   {.v = copyurlcmd } },
   { MODKEY,               XK_o,           externalpipe,   {.v = copyoutput } },
