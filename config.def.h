@@ -5,9 +5,9 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetbrainsMono Nerd Font:size=16:antialias=true:autohint=true";
-static char *font2[] = { "JetbrainsMono Nerd Font:size=16:antialias=true:autohint=true" };
-static int borderpx = 3;
+static char *font = "JetbrainsMono Nerd Font:size=13:antialias=true:autohint=true";
+static char *font2[] = { "JetbrainsMono Nerd Font:size=13:antialias=true:autohint=true" };
+static int borderpx = 4;
 
 /* Kerning / character bounding-box multipliers */
 static float cwscale = 1.0;
