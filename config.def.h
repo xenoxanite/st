@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetbrainsMono Nerd Font:size=18:antialias=true:autohint=true";
-static char *font2[] = { "JetbrainsMono Nerd Font:size=18:antialias=true:autohint=true" };
+static char *font = "Terminess Nerd Font:size=18:antialias=true:autohint=true";
+static char *font2[] = { "Terminess Nerd Font:size=18:antialias=true:autohint=true" };
 static int borderpx = 16;
 
 /* Kerning / character bounding-box multipliers */
