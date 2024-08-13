@@ -5,14 +5,14 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetbrainsMono Nerd Font:size=18:antialias=true:autohint=true";
-static char *font2[] = { "JetbrainsMono Nerd Font:size=18:antialias=true:autohint=true" };
-static int borderpx = 16;
+static char *font = "Operator Mono Lig:size=18:antialias=true:autohint=true";
+static char *font2[] = { "Operator Mono Lig:size=18:antialias=true:autohint=true" };
+static int borderpx = 6;
 
 /* Kerning / character bounding-box multipliers */
 static float cwscale = 1.0;
 static float chscale = 1.0;
-float alpha = 0.95;
+float alpha = 0.96;
 
 /*
  * What program is execed by st depends of these precedence rules:
