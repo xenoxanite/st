@@ -5,9 +5,10 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Terminess Nerd Font:size=22:antialias:weight=500:=true:autohint=true";
-static int borderpx = 8;
+static char *font = "Terminess Nerd Font:size=22:antialias:=true:autohint=true";
+static int borderpx = 10;
 float alpha = 0.9;
+
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -203,8 +204,12 @@ static MouseShortcut mshortcuts[] = {
 #define TERMMOD (Mod4Mask|ShiftMask)
 
 static char *copyurlcmd[] = { "/bin/sh", "-c",
-  "tmp=$(sed 's/.*│//g' | tr -d '\n' | grep -aEo '(((http|https|gopher|gemini|ftp|ftps|git)://|www\\.)[a-zA-Z0-9.]*[:]?[a-zA-Z0-9./@$&%?$#=_-~]*)|((magnet:\\?xt=urn:btih:)[a-zA-Z0-9]*)' | uniq | sed 's/^www./http:\\/\\/www\\./g' ); IFS=; [ ! -z $tmp ] && echo $tmp | dmenu -p 'Copy which url?' -l 10 | tr -d '\n' | xclip -selection clipboard",
+  "tmp=$(sed 's/.*│//g' | tr -d '\n' | grep -aEo '(((http|https|gopher|gemini|ftp|ftps|git)://|www\\.)[a-zA-Z0-9.]*[:]?[a-zA-Z0-9./@$&%?$#=_-~]*)|((magnet:\\?xt=urn:btih:)[a-zA-Z0-9]*)' | uniq | sed 's/^www./http:\\/\\/www\\./g' ); IFS=; [ ! -z $tmp ] && echo $tmp | dmenu -l 10 | tr -d '\n' | xclip -selection clipboard",
   "externalpipe", NULL };
+
+
+
+
 
 
 static Shortcut shortcuts[] = {
