@@ -202,6 +202,11 @@ static MouseShortcut mshortcuts[] = {
 #define MODKEY Mod1Mask
 #define TERMMOD (Mod4Mask|ShiftMask)
 
+static char *copyurlcmd[] = { "/bin/sh", "-c",
+  "tmp=$(sed 's/.*│//g' | tr -d '\n' | grep -aEo '(((http|https|gopher|gemini|ftp|ftps|git)://|www\\.)[a-zA-Z0-9.]*[:]?[a-zA-Z0-9./@$&%?$#=_-~]*)|((magnet:\\?xt=urn:btih:)[a-zA-Z0-9]*)' | uniq | sed 's/^www./http:\\/\\/www\\./g' ); IFS=; [ ! -z $tmp ] && echo $tmp | dmenu -p 'Copy which url?' -l 10 | tr -d '\n' | xclip -selection clipboard",
+  "externalpipe", NULL };
+
+
 static Shortcut shortcuts[] = {
   /* mask                 keysym          function        argument */
   { XK_ANY_MOD,           XK_Break,       sendbreak,      {.i =  0} },
@@ -220,6 +225,10 @@ static Shortcut shortcuts[] = {
   { MODKEY,               XK_j,           kscrolldown,    {.i =  1} },
   { MODKEY,               XK_s,           changealpha,    {.f = -0.05} },
   { MODKEY,               XK_a,           changealpha,    {.f = +0.05} },
+
+
+  { MODKEY,               XK_y,           externalpipe,   {.v = copyurlcmd } },
+
 };
 
 /*
